@@ -23,5 +23,23 @@ for i in range(n):
     slowo=[]
 print(lista)
 print(koniec)
+krotka=tuple(lista)
+print(krotka)
+#a
+print(len(lista))
+znaki=0
+for i in range(len(krotka)):
+    znaki+=len(krotka[i-1])
+
+
+print(znaki)
+
+#b
+k=0
+for i in range(len(lista)):
+    k+=lista[i].count("K")
+
+    print(lista.count("K"))
+print(k)
 
 
