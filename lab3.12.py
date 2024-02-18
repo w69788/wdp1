@@ -1,45 +1,22 @@
-import random
-n=int(input("Ile elementów ma mieć lista? "))
-x=int(input("Maksymalna liczba znaków w łańcuchu: "))
-#ASCII 65-90
-#random
+n = int(input("Podaj liczbę elementów: "))
+x = int(input("Podaj długość ciągu: "))
+l = [input(f"Podaj ciąg znaków o długości {x}: ") for _ in range(n)]
 
-koniec=0
-slowo=[]
-lista=[]
-for i in range(n):
-    for i in range(x):
-        if koniec>=0.8:
-            break
-        else:
-            slowo.append(chr(random.randint(65,90)))
-            print(slowo)
-        koniec=random.random()
-        print(koniec)
+k = tuple(l)
 
-    print(slowo)
-    lista.append(slowo)
-    koniec=0
-    slowo=[]
-print(lista)
-print(koniec)
-krotka=tuple(lista)
-print(krotka)
-#a
-print(len(lista))
-znaki=0
-for i in range(len(krotka)):
-    znaki+=len(krotka[i-1])
+# a)
+z = sum(len(c) for c in l)
+print("a) Ilość znaków w liście:", z)
 
+# b)
+kk = sum(c.count('k') for c in l)
+print("b) Ilość wystąpień litery 'k' w liście:", kk)
 
-print(znaki)
+# c)
+kt = sum(c.count('kt') for c in l)
+print("c) Ilość wystąpień ciągu 'kt' w liście:", kt)
 
-#b
-k=0
-for i in range(len(lista)):
-    k+=lista[i].count("K")
-
-    print(lista.count("K"))
-print(k)
-
-
+# d)
+s = int(input("Podaj długość ciągu s: "))
+d = sum(1 for c in l if len(c) > s)
+print("d) Ilość ciągów dłuższych niż", s, "w liście:", d)

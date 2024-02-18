@@ -4,3 +4,9 @@ for i in range(liczba):
 
         print("*", end=" ")
     print()
+
+
+
+
+#for i in range(liczba):
+#    print("* " * liczba)
